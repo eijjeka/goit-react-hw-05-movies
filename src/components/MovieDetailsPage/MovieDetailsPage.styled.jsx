@@ -2,16 +2,17 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const ButtonGoBackContainer = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
 `;
 
 export const ButtonGoBack = styled.button`
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
@@ -20,7 +21,7 @@ export const ButtonGoBack = styled.button`
 `;
 
 export const ContainerFilmDetails = styled.div`
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 10px;
   border-radius: 30px;
   border: 0.5px solid #fff;

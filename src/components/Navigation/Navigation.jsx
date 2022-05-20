@@ -1,11 +1,13 @@
-import { Link, Nav } from "./Navigation.styled";
+import { Link, Nav, Header } from "./Navigation.styled";
 
 const Navigation = () => {
   return (
-    <Nav>
-      <Link to="/">Home</Link>
-      <Link to="/movies">Movies</Link>
-    </Nav>
+    <Header>
+      <Nav>
+        <Link to="/">Home</Link>
+        <Link to="/movies">Movies</Link>
+      </Nav>
+    </Header>
   );
 };
 

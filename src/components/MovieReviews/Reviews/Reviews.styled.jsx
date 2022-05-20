@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const ContainerReviews = styled.div`
+export const List = styled.ul``;
+
+export const ContainerReviews = styled.li`
   margin-top: 20px;
   width: 100%;
   border-radius: 10px;

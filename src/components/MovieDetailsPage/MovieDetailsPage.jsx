@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Outlet, useNavigate } from "react-router-dom";
+
 import TableInformationFilm from "./TableInformationFilm";
 import * as FilmsAPI from "../../services/fecthMovies";
-import { Loading } from "notiflix/build/notiflix-loading-aio";
 import {
   ButtonGoBackContainer,
   ButtonGoBack,
@@ -17,6 +17,8 @@ import {
   ImagePoster,
 } from "./MovieDetailsPage.styled";
 
+import { Loading } from "notiflix/build/notiflix-loading-aio";
+
 const MovieDetailsPage = () => {
   const { filmId } = useParams();
   const [film, setFilm] = useState();
@@ -27,6 +29,7 @@ const MovieDetailsPage = () => {
       .then((data) => {
         Loading.circle({
           svgColor: "#ff6b01",
+          cssAnimationDuration: 800,
         });
         setFilm(data);
       })
@@ -53,6 +56,7 @@ const MovieDetailsPage = () => {
               src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
               alt="poster"
             />
+
             <ContainerMeta>
               <Title>{film.title}</Title>
               <PreTitle>{film.tagline}</PreTitle>
