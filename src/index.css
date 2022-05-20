@@ -7,6 +7,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./images/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg);
+  background-size: cover;
+  background-position-y: -100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 code {
