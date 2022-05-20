@@ -1,10 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { GenerateGenres } from "./GenerateGenres";
+
 const CardFilm = ({ itemData }) => {
   const location = useLocation();
   const { poster_path, title, id, genre_ids } = itemData;
-  console.log(itemData);
 
   return (
     <>
