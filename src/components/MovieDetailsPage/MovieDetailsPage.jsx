@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Outlet, useNavigate } from "react-router-dom";
 import TableInformationFilm from "./TableInformationFilm";
 import * as FilmsAPI from "../../services/fecthMovies";
+import { Loading } from "notiflix/build/notiflix-loading-aio";
 import {
   ButtonGoBackContainer,
   ButtonGoBack,
@@ -22,7 +23,16 @@ const MovieDetailsPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    FilmsAPI.fetchFilmInfo(filmId).then(setFilm);
+    FilmsAPI.fetchFilmInfo(filmId)
+      .then((data) => {
+        Loading.circle({
+          svgColor: "#ff6b01",
+        });
+        setFilm(data);
+      })
+      .finally(() => {
+        Loading.remove();
+      });
   }, [filmId]);
 
   const onGoBack = () => {

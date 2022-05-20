@@ -4,19 +4,28 @@ import * as FilmsAPI from "../../services/fecthMovies";
 import FilmList from "../FilmList";
 import Form from "./Form/Form";
 import styled from "styled-components";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+import { Loading } from "notiflix/build/notiflix-loading-aio";
 
 const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState(searchParams.get("query") ?? "");
   const [films, setFilms] = useState([]);
-  const [searchValue, setSearchValue] = useState();
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     if (query) {
       setSearchParams(`query=${query}`);
-      FilmsAPI.fetchSearchFilmByName(query).then((data) => {
-        setFilms(data);
-      });
+      FilmsAPI.fetchSearchFilmByName(query)
+        .then((data) => {
+          Loading.circle({
+            svgColor: "#ff6b01",
+          });
+          setFilms(data);
+        })
+        .finally(() => {
+          Loading.remove();
+        });
     }
   }, [query, setSearchParams]);
 
@@ -28,7 +37,7 @@ const MoviesPage = () => {
     e.preventDefault();
 
     if (searchValue === "") {
-      console.error("🦄 Please enter the name!");
+      Notify.failure("🦄 Please enter the name!");
       return;
     }
     setQuery(searchValue);

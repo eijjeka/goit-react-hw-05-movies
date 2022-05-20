@@ -22,7 +22,7 @@ export const ButtonSubmit = styled.button`
 `;
 
 export const Input = styled.input`
-  /* width: 400px; */
+  width: 400px;
   padding: 10px;
   border: none;
   outline: none;
