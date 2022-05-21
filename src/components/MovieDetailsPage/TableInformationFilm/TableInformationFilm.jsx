@@ -1,4 +1,5 @@
 import { Table, Tr, Td, TitleCategory } from "./TableInformationFilm.styled";
+import PropTypes from "prop-types";
 
 const TableInformationFilm = ({ data }) => {
   const {
@@ -67,3 +68,7 @@ const TableInformationFilm = ({ data }) => {
 };
 
 export default TableInformationFilm;
+
+TableInformationFilm.propTypes = {
+  data: PropTypes.object.isRequired,
+};

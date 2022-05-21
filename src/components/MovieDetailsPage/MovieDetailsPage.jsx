@@ -1,22 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Outlet, useNavigate } from "react-router-dom";
-
-import TableInformationFilm from "./TableInformationFilm";
 import * as FilmsAPI from "../../services/fecthMovies";
-import {
-  ButtonGoBackContainer,
-  ButtonGoBack,
-  ContainerFilmDetails,
-  FilmContainer,
-  Reviews,
-  Cast,
-  AdditionalInfo,
-  Title,
-  PreTitle,
-  ContainerMeta,
-  ImagePoster,
-} from "./MovieDetailsPage.styled";
-
+import FilmDetailsCard from "./FilmDetailsCard";
+import { ButtonGoBackContainer, ButtonGoBack } from "./MovieDetailsPage.styled";
 import { Loading } from "notiflix/build/notiflix-loading-aio";
 
 const MovieDetailsPage = () => {
@@ -49,26 +35,7 @@ const MovieDetailsPage = () => {
           Go back
         </ButtonGoBack>
       </ButtonGoBackContainer>
-      {film && (
-        <ContainerFilmDetails>
-          <FilmContainer>
-            <ImagePoster
-              src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
-              alt="poster"
-            />
-
-            <ContainerMeta>
-              <Title>{film.title}</Title>
-              <PreTitle>{film.tagline}</PreTitle>
-              <TableInformationFilm data={film} />
-            </ContainerMeta>
-          </FilmContainer>
-          <AdditionalInfo>
-            <Cast to={"cast"}>Cast</Cast>
-            <Reviews to={"reviews"}>Reviews</Reviews>
-          </AdditionalInfo>
-        </ContainerFilmDetails>
-      )}
+      {film && <FilmDetailsCard data={film} />}
       <Outlet />
     </>
   );

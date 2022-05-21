@@ -7,6 +7,7 @@ import {
   Item,
   Wrapper,
 } from "./MovieCreditsCard.styled";
+import PropTypes from "prop-types";
 
 const MovieCreditsCard = ({ data }) => {
   return (
@@ -34,3 +35,7 @@ const MovieCreditsCard = ({ data }) => {
 };
 
 export default MovieCreditsCard;
+
+MovieCreditsCard.propTypes = {
+  data: PropTypes.array.isRequired,
+};

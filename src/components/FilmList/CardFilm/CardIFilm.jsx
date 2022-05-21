@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { GenerateGenres } from "./GenerateGenres";
 import { ItemLink, Item, Title, MetaWrapper, Image } from "./CardFilm.styled";
+import PropTypes from "prop-types";
 
 const CardFilm = ({ itemData }) => {
   const location = useLocation();
@@ -34,3 +35,7 @@ const CardFilm = ({ itemData }) => {
 };
 
 export default CardFilm;
+
+CardFilm.propTypes = {
+  itemData: PropTypes.object.isRequired,
+};
