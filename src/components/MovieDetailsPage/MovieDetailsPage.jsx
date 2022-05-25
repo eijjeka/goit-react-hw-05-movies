@@ -25,7 +25,7 @@ const MovieDetailsPage = () => {
   }, [filmId]);
 
   const onGoBack = () => {
-    navigate(-1);
+    navigate("./");
   };
 
   return (
