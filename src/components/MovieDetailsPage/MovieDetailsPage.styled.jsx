@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const ButtonGoBackContainer = styled.div`
   margin-top: 10px;
@@ -7,7 +8,7 @@ export const ButtonGoBackContainer = styled.div`
   justify-content: center;
 `;
 
-export const ButtonGoBack = styled.button`
+export const ButtonGoBack = styled(Link)`
   padding: 5px 10px;
   border: none;
   border-radius: 20px;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Outlet, useNavigate } from "react-router-dom";
+import { useParams, Outlet, useNavigate, useLocation } from "react-router-dom";
 import * as FilmsAPI from "../../services/fecthMovies";
 import FilmDetailsCard from "./FilmDetailsCard";
 import { ButtonGoBackContainer, ButtonGoBack } from "./MovieDetailsPage.styled";
@@ -8,7 +8,8 @@ import { Loading } from "notiflix/build/notiflix-loading-aio";
 const MovieDetailsPage = () => {
   const { filmId } = useParams();
   const [film, setFilm] = useState();
-  const navigate = useNavigate();
+  const { state } = useLocation();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     FilmsAPI.fetchFilmInfo(filmId)
@@ -24,14 +25,14 @@ const MovieDetailsPage = () => {
       });
   }, [filmId]);
 
-  const onGoBack = () => {
-    navigate(-1);
-  };
+  // const onGoBack = () => {
+  //   navigate(-1);
+  // };
 
   return (
     <>
       <ButtonGoBackContainer>
-        <ButtonGoBack type="button" onClick={onGoBack}>
+        <ButtonGoBack to={state} type="button">
           Go back
         </ButtonGoBack>
       </ButtonGoBackContainer>

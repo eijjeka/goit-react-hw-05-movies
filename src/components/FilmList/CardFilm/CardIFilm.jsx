@@ -4,7 +4,7 @@ import { ItemLink, Item, Title, MetaWrapper, Image } from "./CardFilm.styled";
 import PropTypes from "prop-types";
 
 const CardFilm = ({ itemData }) => {
-  const location = useLocation();
+  const { pathname, search } = useLocation();
   const { poster_path, title, id, genre_ids } = itemData;
 
   return (
@@ -13,8 +13,8 @@ const CardFilm = ({ itemData }) => {
         <ItemLink
           to={{
             pathname: `/movies/${id}`,
-            state: { from: location },
           }}
+          state={`${pathname}${search}`}
         >
           <Image
             src={
