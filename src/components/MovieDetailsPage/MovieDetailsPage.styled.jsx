@@ -11,6 +11,9 @@ export const ButtonGoBackContainer = styled.div`
 export const ButtonGoBack = styled(Link)`
   padding: 5px 10px;
   border: none;
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);

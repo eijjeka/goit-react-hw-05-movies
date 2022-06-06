@@ -6,7 +6,6 @@ import {
   PanelInfo,
   ContainerReviews,
 } from "./Reviews.styled";
-import PropTypes from "prop-types";
 
 const Reviews = ({ data }) => {
   const { author_details, author, created_at, content, avatarPath } = data;
@@ -35,7 +34,3 @@ const Reviews = ({ data }) => {
 };
 
 export default Reviews;
-
-Reviews.propTypes = {
-  data: PropTypes.array.isRequired,
-};

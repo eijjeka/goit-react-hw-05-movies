@@ -9,11 +9,13 @@ import {
   ContainerMeta,
   ImagePoster,
 } from "./FilmDetailsCard.styled";
+import { useLocation } from "react-router-dom";
 import TableInformationFilm from "../TableInformationFilm";
 import PropTypes from "prop-types";
 
 const FilmDetailsCard = ({ data }) => {
   const { title, tagline, poster_path } = data;
+  const { state } = useLocation();
   return (
     <ContainerFilmDetails>
       <FilmContainer>
@@ -29,8 +31,12 @@ const FilmDetailsCard = ({ data }) => {
         </ContainerMeta>
       </FilmContainer>
       <AdditionalInfo>
-        <Cast to={"cast"}>Cast</Cast>
-        <Reviews to={"reviews"}>Reviews</Reviews>
+        <Cast to={"cast"} state={state}>
+          Cast
+        </Cast>
+        <Reviews to={"reviews"} state={state}>
+          Reviews
+        </Reviews>
       </AdditionalInfo>
     </ContainerFilmDetails>
   );

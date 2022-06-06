@@ -9,7 +9,6 @@ const MovieDetailsPage = () => {
   const { filmId } = useParams();
   const [film, setFilm] = useState();
   const { state } = useLocation();
-  // const navigate = useNavigate();
 
   useEffect(() => {
     FilmsAPI.fetchFilmInfo(filmId)
@@ -24,10 +23,6 @@ const MovieDetailsPage = () => {
         Loading.remove();
       });
   }, [filmId]);
-
-  // const onGoBack = () => {
-  //   navigate(-1);
-  // };
 
   return (
     <>
