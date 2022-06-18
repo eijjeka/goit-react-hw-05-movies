@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import * as FilmsAPI from "../../services/fecthMovies";
-import FilmList from "../FilmList";
+import * as FilmsAPI from "../../../services/fecthMovies";
+import FilmList from "../../FilmList";
 import Form from "./Form/Form";
 import styled from "styled-components";
 import { Notify } from "notiflix/build/notiflix-notify-aio";

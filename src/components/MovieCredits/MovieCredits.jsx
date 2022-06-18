@@ -9,7 +9,7 @@ const MovieCredits = () => {
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
-    FetchAPI.fetchMovieCredits(params.filmId)
+    FetchAPI.fetchMovieCredits(params.id)
       .then((data) => {
         Loading.circle({
           svgColor: "#ff6b01",
@@ -19,7 +19,7 @@ const MovieCredits = () => {
       .finally(() => {
         Loading.remove();
       });
-  }, [params.filmId]);
+  }, [params.id]);
 
   return <>{actors && <MovieCreditsCard data={actors} />}</>;
 };

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import FilmList from "../FilmList";
-import * as FilmsAPI from "../../services/fecthMovies";
+import FilmList from "../../FilmList";
+import * as FilmsAPI from "../../../services/fecthMovies";
 import { Loading } from "notiflix/build/notiflix-loading-aio";
 
 const HomePage = () => {

@@ -1,5 +1,6 @@
-import { genresInfo } from "../../data/genresInfo";
+import { genresInfo } from "./genresInfo";
 import styled from "styled-components";
+
 export const GenerateGenres = (genresId) => {
   const id = Object.values(genresId);
   const listGenres = [];

@@ -3,24 +3,29 @@ import { Suspense, lazy } from "react";
 import { Loading } from "notiflix/build/notiflix-loading-aio";
 
 const Layout = lazy(() =>
-  import("./Layout/Layout" /* webpackChunkName: "layout" */)
+  import("../Layout/Layout" /* webpackChunkName: "layout" */)
 );
 
 const HomePage = lazy(() =>
-  import("./HomePage" /* webpackChunkName: "home-view" */)
+  import("../page/HomePage" /* webpackChunkName: "home-view" */)
 );
+
 const MoviesPage = lazy(() =>
-  import("./MoviesPage" /* webpackChunkName: "movies-view" */)
+  import("../page/MoviesPage" /* webpackChunkName: "movies-view" */)
 );
+
 const MovieDetailsPage = lazy(() =>
-  import("./MovieDetailsPage" /* webpackChunkName: "movie-details-view" */)
+  import(
+    "../page/MovieDetailsPage" /* webpackChunkName: "movie-details-view" */
+  )
 );
 
 const MovieCredits = lazy(() =>
-  import("./MovieCredits" /* webpackChunkName: "movies-credits" */)
+  import("../MovieCredits" /* webpackChunkName: "movies-credits" */)
 );
+
 const MovieReviews = lazy(() =>
-  import("./MovieReviews" /* webpackChunkName: "movie-reviews" */)
+  import("../MovieReviews" /* webpackChunkName: "movie-reviews" */)
 );
 
 export default function App() {
@@ -36,7 +41,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="movies" element={<MoviesPage />} />
-          <Route path="movies/:filmId/" element={<MovieDetailsPage />}>
+          <Route path="movies/:id" element={<MovieDetailsPage />}>
             <Route path="cast" element={<MovieCredits />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>

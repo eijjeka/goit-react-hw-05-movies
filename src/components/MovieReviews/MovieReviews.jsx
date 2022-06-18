@@ -10,7 +10,7 @@ const MovieReviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    FetchAPI.fetchMovieReviews(params.filmId).then((data) => {
+    FetchAPI.fetchMovieReviews(params.id).then((data) => {
       if (data.length === 0) {
         return Notify.info("Sorry... reviews list is empty");
       }
