@@ -23,7 +23,6 @@ const MovieDetailsPage = lazy(() =>
 const MovieCredits = lazy(() =>
   import("../MovieCredits" /* webpackChunkName: "movies-credits" */)
 );
-
 const MovieReviews = lazy(() =>
   import("../MovieReviews" /* webpackChunkName: "movie-reviews" */)
 );
