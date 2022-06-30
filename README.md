@@ -22,6 +22,6 @@
 - [/movies/get-movie-reviews](https://developers.themoviedb.org/3/movies/get-movie-reviews)
   запрос обзоров для страницы кинофильма.
 
-## Добавил асинхронную загрузку JS-кода для маршрутов приложения используя
+Добавил асинхронную загрузку JS-кода для маршрутов приложения используя
 
 `React.lazy()` и `Suspense`.
